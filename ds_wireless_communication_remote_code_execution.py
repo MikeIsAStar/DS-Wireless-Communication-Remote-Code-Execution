@@ -8,8 +8,14 @@ result of damages caused by the usage of this code.
 __author__ = 'MikeIsAStar'
 __date__ = '11 Oct 2023'
 
-import pydivert
 import re
+import sys
+
+try:
+    import pydivert
+except ModuleNotFoundError:
+    sys.exit("The 'pydivert' module is not installed !")
+
 
 # Variables
 LR_SAVE = b'\x41\x41\x41\x41'
@@ -50,7 +56,7 @@ def main():
     except KeyboardInterrupt:
         pass
     except PermissionError:
-        print('This program must be run with administrator privileges !')
+        sys.exit('This program must be run with administrator privileges !')
 
 
 if __name__ == '__main__':
