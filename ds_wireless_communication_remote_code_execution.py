@@ -6,7 +6,7 @@ result of damages caused by the usage of this code.
 """
 
 __author__ = 'MikeIsAStar'
-__date__ = '11 Oct 2023'
+__date__ = '03 Nov 2023'
 
 import re
 import sys
@@ -31,7 +31,7 @@ WINDIVERT_FILTER = 'outbound and tcp and tcp.PayloadLength > 0'
 
 
 def try_modify_payload(payload):
-    message_pattern = rb'\\msg\\GPCM([1-9][0-9]?)vMAT'
+    message_pattern = rb'\\msg\\GPCM[1-9][0-9]?vMAT'
     message = re.search(message_pattern, payload)
     if not message:
         return None
