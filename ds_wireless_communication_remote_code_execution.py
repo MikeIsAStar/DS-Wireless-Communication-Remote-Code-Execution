@@ -59,7 +59,7 @@ def try_modify_payload(payload):
     payload += LR_SAVE
     payload += FINAL_KEY
 
-    print('Modified a GPCM message !')
+    print(f'Modified a GPCM{matching_version}vMAT message !')
 
     return payload
 
