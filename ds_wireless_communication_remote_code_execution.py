@@ -46,6 +46,9 @@ def try_modify_payload(payload):
             padding_length = DWC_MATCHING_VERSION_3_PADDING_LENGTH
         case 11:
             padding_length = DWC_MATCHING_VERSION_11_PADDING_LENGTH
+        case 90:
+            print('Modifying GPCM90vMAT messages is not supported !')
+            return None
         case _:
             print(f'Modifying GPCM{matching_version}vMAT messages is not yet supported !')
             return None
