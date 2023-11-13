@@ -6,7 +6,7 @@ result of damages caused by the usage of this code.
 """
 
 __author__ = 'MikeIsAStar'
-__date__ = '06 Nov 2023'
+__date__ = '13 Nov 2023'
 
 import re
 import sys
@@ -34,7 +34,7 @@ FINAL_KEY = b'\\final\\'
 WINDIVERT_FILTER = 'outbound and tcp and tcp.PayloadLength > 0'
 
 
-def try_modify_payload(payload):
+def try_modify_gpcm_message(payload):
     message_pattern = rb'\\msg\\GPCM([1-9][0-9]?)vMAT'
     message = re.search(message_pattern, payload)
     if not message:
@@ -68,7 +68,7 @@ def main():
     try:
         with pydivert.WinDivert(WINDIVERT_FILTER) as packet_buffer:
             for packet in packet_buffer:
-                payload = try_modify_payload(packet.payload)
+                payload = try_modify_gpcm_message(packet.payload)
                 if payload is not None:
                     packet.payload = payload
                 packet_buffer.send(packet)
