@@ -6,13 +6,13 @@ result of damages caused by the usage of this code.
 """
 
 __author__ = 'MikeIsAStar'
-__date__ = '13 Nov 2023'
+__date__ = '19 Nov 2023'
 
 import re
 import sys
 
 if sys.version_info < (3, 10):
-    sys.exit("This program requires Python 3.10 or above !")
+    sys.exit('This program requires Python 3.10 or above !')
 
 try:
     import pydivert
