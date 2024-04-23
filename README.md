@@ -3,10 +3,13 @@
 Injects arbitrary code into a client's game.
 
 ## Prerequisites
+- Python 3.10
+- pip
 - pydivert
 
 ## Usage
 ```cmd
+pip install -r requirements.txt
 python ds_wireless_communication_remote_code_execution.py
 ```
 
