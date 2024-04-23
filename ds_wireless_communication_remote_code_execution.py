@@ -6,7 +6,7 @@ result of damages caused by the usage of this code.
 """
 
 __author__ = 'MikeIsAStar'
-__date__ = '19 Nov 2023'
+__date__ = '23 Apr 2024'
 
 import re
 import sys
@@ -22,9 +22,9 @@ except ModuleNotFoundError:
 
 # Variables
 LR_SAVE = b'\x41\x41\x41\x41'
-assert len(LR_SAVE) == 0x04
+assert len(LR_SAVE) == 0x04 and b'\x00' not in LR_SAVE
 PADDING = b'MikeStar'
-assert len(PADDING) > 0x00
+assert len(PADDING) > 0x00 and b'\x00' not in PADDING
 
 # Constants
 DWC_MATCH_COMMAND_INVALID = b'\xFE'
